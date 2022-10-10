@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script type="text/javascript" src="js/scripts.js"></script>
+
+
+</head>
+<body onLoad="inicio()">
+<canvas id="lienzo1" width="600" height="600">
+  Su navegador no permite utilizar canvas.
+</canvas>
+<script type="text/javascript">
+  var canvas = document.getElementById('lienzo1');
+  var ctx2 = canvas.getContext("2d");
+  var img1;
+  var avance=0;
+  var tamx=0.01;
+  var tamy=0.01;
+  img1 = new Image();
+  img1.src = 'img/foto1.png';
+
+  setInterval(dibujar,100);
+</script>
+</body>
+
+</html>

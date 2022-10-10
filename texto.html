@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type = 'text/javascript' src="js/scripts.js"></script>
+</head>
+<body>
+<canvas id="mycanvas" width="1200" height="600" style="border: 1px solid #129303">
+    Tu navegador no soporta canvas
+</canvas>
+<script>
+    var canvas = document.getElementById('mycanvas');
+    var ctx = canvas.getContext('2d');
+    var x = canvas.width/2;
+    var y = canvas.height/2;
+    ctx.fillStyle = 'red';
+    ctx.font = '20px serif';
+    ctx.fillText('esto es un texto cojo', x, y);
+
+</script>
+</body>
+</html>
