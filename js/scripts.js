@@ -8,8 +8,6 @@ function degradado(){
     ctx.fillStyle = 'black';
     ctx.rect(0,0,1200,500);
     ctx.fillStyle= '#208956';
-
-
     ctx.stroke();
 }
 function  linea(){
@@ -90,6 +88,8 @@ function dibujaPala(){
 function keyDownHandler(e){
     if (e.keyCode == 39){
         derpulsa = true;
+        console.log('pulsaste derecha');
+
     }
     else if (e.keyCode == 37){
         izqpulsa = true;
@@ -138,4 +138,49 @@ function dibujar() {
     }
 }
 
+function getRandomIntInclusive(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
+function dibujamonster() {
+    //ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var x = getRandomIntInclusive(25, canvas.width-25);
+    var y = getRandomIntInclusive(25, canvas.height-25);
+    var image = new Image();
+    image.src = 'img/monster.png';
+    ctx.drawImage(image, x, y, 25,25);
+    const map = new Map();
+    map.set(x);
+    console.log(map);
+
+}
+
+function getClickPosition(e) {
+    var xPosicion = e.clientX;
+    var yPosicion = e.clientY;
+    console.log('x: '+ xPosicion + 'y: ' + yPosicion);
+
+}
+
+function dibujatanque(){
+    ctx3.beginPath();
+    ctx3.rect(100, (canvas.height/2) - 20, 140 , 20);
+    ctx3.fillStyle = "#2d572c";
+    ctx3.rect(100, (canvas.height/2) - 100, 140 , 20);
+    ctx3.fillStyle = "#2d572c";
+    ctx3.rect(120, (canvas.height/2) - 100, 100 , 80);
+    ctx3.fillStyle = "#2d572c";
+    ctx3.fill();
+    ctx3.closePath();
+}
+function dibujatorre(){
+    ctx3.beginPath();
+    ctx3.arc(170, (canvas.height/2) - 50, 30, 0, 2*Math.PI);
+    ctx3.fillStyle = "red";
+    ctx3.fill();
+    ctx3.moveTo(170, (canvas.height/2) - 50 );
+    ctx3.lineTo(300, (canvas.height/2) - 50 );
+    ctx3.strokeStyle = 'red';
+    ctx3.stroke();
+    ctx3.closePath();
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Movimiento de balón</title>
+  <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+<section><h4>Kill the monster</h4></section>
+ <!-- <canvas id="mycanvas1" width="1200" height="50" style="border: 1px solid #129303">
+    Tu navegador no soporta canvas
+  </canvas> -->
+  <canvas id="mycanvas" width="1000" height="500" style="border: 1px solid #129303">
+    Tu navegador no soporta canvas
+  </canvas>
+
+<script type="text/javascript">
+  //var canvas = document.getElementById('mycanvas1');
+  //var ctx1 = canvas.getContext('2d');
+  var canvas = document.getElementById('mycanvas');
+  var ctx = canvas.getContext('2d');
+  document.addEventListener("click", getClickPosition, false);
+  setInterval(dibujamonster, 1000);
+</script>
+
+</body>
+</html>
