@@ -138,4 +138,26 @@ function dibujar() {
     }
 }
 
+function getRandomIntInclusive(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
+function dibujamonster() {
+    //ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var x = getRandomIntInclusive(25, canvas.width-25);
+    var y = getRandomIntInclusive(25, canvas.height-25);
+    var image = new Image();
+    image.src = 'img/monster.png';
+    ctx.drawImage(image, x, y, 25,25);
+    const map = new Map();
+    map.set(x);
+    console.log(map);
+
+}
+
+function getClickPosition(e) {
+    var xPosicion = e.clientX;
+    var yPosicion = e.clientY;
+    console.log('x: '+ xPosicion + 'y: ' + yPosicion);
+
+}
