@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tanque</title>
-    <script type="text/javascript" src="js2/scripts.js"></script>
+    <script type="text/javascript" src="js/js2.js"></script>
 </head>
 <body>
 <canvas id="micanvas" width="1100" height="600" style="border:1px solid #000000;">
@@ -14,8 +14,21 @@
   var ctx3 = canvas.getContext("2d");
   dibujatanque();
   dibujatorre();
-  document.addEventListener('keydown', muevecanon, false);
-  setInterval(dibujamonster, 100);
+  valor = 2;
+
+  document.addEventListener('keypress', function (e) {
+      e.preventDefault();
+      if (e.keyCode == 65 || e.keyCode == 97 ) {
+          valor = muevecanoni(valor);
+          valor = 2*valor;
+          console.log('pulsa izquierda');
+      }else if (e.keyCode == 83 || e.keyCode == 115 ){
+          valor = muevecanona(valor);
+          valor = 2*valor;
+          console.log('pulsa derecha');
+      }
+  });
+
 </script>
 
 </body>
