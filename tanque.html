@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Tanque</title>
-    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js2/scripts.js"></script>
 </head>
 <body>
-<canvas id="micanvas" width="1100" height="800" style="border:1px solid #000000;">
+<canvas id="micanvas" width="1100" height="600" style="border:1px solid #000000;">
   Tu navegador no soporta canvas
 </canvas>
 <script type="text/javascript">
@@ -14,6 +14,8 @@
   var ctx3 = canvas.getContext("2d");
   dibujatanque();
   dibujatorre();
+  document.addEventListener('keydown', muevecanon, false);
+  setInterval(dibujamonster, 100);
 </script>
 
 </body>
